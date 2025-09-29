@@ -1,7 +1,7 @@
 import LiveStreams from './components/LiveStreams';
 import SessionForm from './components/SessionForm';
 import SessionList from './components/SessionList';
-// import CommunityPosts from './components/CommunityPosts'; // This will use your new PostCard
+import ArticleFeed from './components/ArticleFeed'; // Import the new component
 
 // --- Sidebar Components (can be moved to their own files later) ---
 
@@ -44,13 +44,17 @@ const RightSidebar = () => (
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen bg-gray-900 text-white">
       <LeftSidebar />
-      <main className="flex-1 p-6 space-y-10">
+      <main className="flex-1 p-6 space-y-10 overflow-y-auto">
         
         {/* Main content sections */}
         <LiveStreams />
-        {/* <CommunityPosts /> */}
+        
+        {/* The new ArticleFeed component is now included */}
+        <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50">
+           <ArticleFeed />
+        </div>
 
         {/* Session management section */}
         <div className="max-w-4xl mx-auto">
